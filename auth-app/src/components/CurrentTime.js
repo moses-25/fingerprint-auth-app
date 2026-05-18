@@ -27,7 +27,7 @@ export default function CurrentTime() {
 
   return (
     <section className="current-date-container">
-      <h3 className="current-date">Hora:</h3>
+      <h3 className="current-date">Time:</h3>
       <h3 className="current-date-value">{formatTime(currentTime)}</h3>
     </section>
   );

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import '../styles/LoginForm.css';
-import FingerprintReader from './FingerprintReader';
+import '../styles/loginForm.css';
+import FingerprintReader from './FingerprintReader.js';
 import LoginServerError from './LoginServerError';
 
 export default function Form({ setLoggedIn, loggedIn, token, setToken }) {
@@ -41,20 +41,20 @@ export default function Form({ setLoggedIn, loggedIn, token, setToken }) {
 
       if (error.statusCode === 404 && error.error === 'Not Found') {
         setErrorDetails({
-          title: 'Datos incorrectos',
-          message: error.message, // Display message from server response
+          title: 'Incorrect credentials',
+          message: error.message,
         });
         setShowModal(true);
       } else if (error.statusCode === 401 && error.error === 'Unauthorized') {
         setErrorDetails({
-          title: 'Datos incorrectos',
-          message: error.message, // Display message from server response
+          title: 'Incorrect credentials',
+          message: error.message,
         });
         setShowModal(true);
       } else {
         setErrorDetails({
           title: 'Error',
-          message: 'Servidor fuera de servicio. Por favor contacte a soporte.',
+          message: 'Server is unavailable. Please contact support.',
         });
         setShowModal(true);
       }
@@ -76,33 +76,33 @@ export default function Form({ setLoggedIn, loggedIn, token, setToken }) {
       {!loggedIn ? (
         <form className="login-form" onSubmit={handleSubmit}>
           <div className="login-form-main-container">
-            <h1 className="title-welcome">Bienvenido</h1>
-            <p className="sub-title">Por favor inicia sesión</p>
+            <h1 className="title-welcome">Welcome</h1>
+            <p className="sub-title">Please sign in</p>
 
             <div className="fields-container">
               <InputField
-                label="Usuario"
+                label="Username"
                 id="username"
                 value={formData.username}
-                placeholder="ingrese su usuario"
+                placeholder="enter your username"
                 onChange={handleChange}
               />
               <InputField
-                label="Contraseña"
+                label="Password"
                 id="password"
                 type="password"
                 value={formData.password}
-                placeholder="ingrese su contraseña"
+                placeholder="enter your password"
                 onChange={handleChange}
               />
             </div>
 
             <button type="button" className="forgot-password-btn">
-              Olvidé la contraseña
+              Forgot password
             </button>
 
             <button type="submit" className="sign-in-btn">
-              Ingresar
+              Sign In
             </button>
           </div>
         </form>
