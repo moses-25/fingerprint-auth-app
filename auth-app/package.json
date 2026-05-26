@@ -19,9 +19,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject",
     "dev-dep": "npm install && npm install nodemon eslint eslint-config-prettier eslint-plugin-prettier prettier eslint-plugin-node eslint-plugin-react --save-dev -D && echo \"Production and Development dependencies installed\""
   },
@@ -46,12 +46,13 @@
   "author": "Cristianco9 <cristian_cortes_ortiz@hotmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
+    "@craco/craco": "^7.1.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.1.2",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-react": "^7.35.0",
-    "nodemon": "^3.1.4",
-    "prettier": "^3.3.3"
+    "eslint-plugin-prettier": "^5.5.5",
+    "eslint-plugin-react": "^7.37.5",
+    "nodemon": "^3.1.14",
+    "prettier": "^3.8.3"
   }
 }

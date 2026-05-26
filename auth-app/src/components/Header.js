@@ -12,11 +12,11 @@ export default function Header() {
     let greetingMessage = '';
 
     if (currentHour >= 5 && currentHour < 12) {
-      greetingMessage = 'Hola, buenos días';
+      greetingMessage = 'Good morning';
     } else if (currentHour >= 12 && currentHour < 19) {
-      greetingMessage = 'Hola, buenas tardes';
+      greetingMessage = 'Good afternoon';
     } else {
-      greetingMessage = 'Hola, buenas noches';
+      greetingMessage = 'Good evening';
     }
 
     setGreeting(greetingMessage);
@@ -30,7 +30,7 @@ export default function Header() {
           {greeting}
         </h1>
         <h2 className="welcome-message">
-          Institución Educativa Nuestra Señora de Chiquinquirá
+          Our Lady of Chiquinquirá Educational Institution
         </h2>
       </div>
       <LogoSmall />
