@@ -3,12 +3,8 @@ import '../styles/FingerprintReader.css';
 import Header from './Header.js';
 import CurrentTime from './CurrentTime.js';
 import FingerprintIcon from './FingerprintIcon.js';
-<<<<<<< HEAD
-
-=======
 import { FingerprintReader, SampleFormat } from '@digitalpersona/devices';
 import WebSdk from '../sdk/index.js';
->>>>>>> origin/main
 
 export default function FingerprintReaderFn() {
   const [status, setStatus] = useState('No device connected');
@@ -41,53 +37,6 @@ export default function FingerprintReaderFn() {
   };
 
   useEffect(() => {
-<<<<<<< HEAD
-    if (isListening) {
-      //startListening();
-    }
-    return () => setIsListening(false); // Cleanup on unmount
-  }, [isListening]);
-
-  /*
-  const startListening = () => {
-    // Set up an interval to continuously check for fingerprint input
-    const listener = setInterval(async () => {
-      const fingerprintData = await captureFingerprint();
-      if (fingerprintData) {
-        await handleFingerprintAuthentication(fingerprintData);
-      }
-    }, 1000); // Adjust the interval timing as needed
-
-    // Cleanup the interval when the component unmounts or listening stops
-    return () => clearInterval(listener);
-  };
-  */
-
-  const fingerprintToJWT = (fingerprintData) => {
-    const payload = {
-      fingerprint: fingerprintData,
-    };
-    //const token = createJWT(payload, JWT_KEY);
-    //return token;
-  };
-
-  const handleFingerprintAuthentication = async (fingerprintData) => {
-    setIsListening(false); // Stop listening while processing
-    setShowModal(true);
-    setModalData("Autenticando...");
-
-    try {
-      const fingerprintJWT = fingerprintToJWT(fingerprintData);
-      const response = await fetch('/api/auth/fingerprint', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'APIKey': '48fdd9794d35198c4867fb0180252908cc742b18835545d4342ae9544748aa0d',
-          'Authorization': `Bearer ${fingerprintJWT}`
-        },
-        body: JSON.stringify({ fingerPrintToken: fingerprintJWT }),
-        mode: 'cors',
-=======
     initializeFingerprintReader();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -104,7 +53,6 @@ export default function FingerprintReaderFn() {
       })
       .catch((err) => {
         setError('Fingerprint capture failed: ' + err.message);
->>>>>>> origin/main
       });
   };
 
@@ -130,7 +78,3 @@ export default function FingerprintReaderFn() {
     </div>
   );
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/main
